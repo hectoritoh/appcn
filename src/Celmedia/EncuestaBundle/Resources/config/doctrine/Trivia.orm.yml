@@ -1,0 +1,43 @@
+Celmedia\EncuestaBundle\Entity\Trivia:
+    type: entity
+    table: trivia
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            length: 140
+            nullable: false
+        autor:
+            type: string
+            length: 140
+            nullable: false
+        estado:
+            type: integer
+            unsigned: false
+            nullable: false
+        created:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updated:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: update
+
+    oneToMany:
+      preguntas:
+        targetEntity: Pregunta
+        mappedBy: trivia
+        cascade: ["persist"]
+
+    lifecycleCallbacks:
+        prePersist:   [ lifecycleFileUpload ]
+        preUpdate:    [ lifecycleFileUpload ]

@@ -1,0 +1,46 @@
+Celmedia\EncuestaBundle\Entity\Estado:
+    type: entity
+    table: Estado
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+#        web o desktop
+        modo:
+            type: string
+            unsigned: false
+            nullable: false
+#        estado    
+        listo:
+            type: string
+            unsigned: false
+            nullable: false
+#       accion
+        accion:
+            type: string
+            unsigned: false
+            nullable: false
+            
+        puntaje:
+            type: integer
+            unsigned: false
+            nullable: true
+
+            
+            
+     
+        created:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updated:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: update
+            

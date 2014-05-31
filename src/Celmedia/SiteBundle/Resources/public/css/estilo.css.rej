@@ -1,0 +1,9 @@
+diff a/src/Celmedia/SiteBundle/Resources/public/css/estilo.css b/src/Celmedia/SiteBundle/Resources/public/css/estilo.css	(rejected hunks)
+@@ -252,7 +252,6 @@
+ 	background-repeat: repeat-x;
+ 	position: absolute;
+ 	bottom: 0;
+-	/* background-color: red; */
+ 	height: 75%;
+ 	width: 100%;
+ 	background-size: contain;

@@ -1,0 +1,3 @@
+celmedia_encuesta_homepage:
+    pattern:  /
+    defaults: { _controller: CelmediaEncuestaBundle:Default:index }

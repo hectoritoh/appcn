@@ -1,0 +1,41 @@
+Celmedia\EncuestaBundle\Entity\Respuesta:
+    type: entity
+    table: respuesta
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        respuesta:
+            type: text
+
+            nullable: false
+        valor:
+            type: integer
+            unsigned: false
+            nullable: false
+        created:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updated:
+            type: datetime
+            gedmo:
+              timestampable:
+                on: update
+
+    manyToOne:
+      pregunta:
+        targetEntity: Pregunta
+        inversedBy: respuestas
+        joinColumn:
+          name: pregunta_id
+          referencedColumnName: id
+
+    lifecycleCallbacks:
+        prePersist:   [ lifecycleFileUpload ]
+        preUpdate:    [ lifecycleFileUpload ]

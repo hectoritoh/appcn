@@ -1,0 +1,561 @@
+{% extends 'CelmediaSiteBundle::template.html.twig' %}
+
+{%  block content %}        
+
+    <div style="display: none;" >
+
+        <audio id="audio_lluvia" controls  loop volume=0.5 >
+        <source src="{{  asset('bundles/celmediasite/audio/rain.mp3') }}" type="audio/mpeg">  
+    </audio>
+    
+    <audio id="tormenta_audio_1" controls autoplay loop >
+        <source src="{{  asset('bundles/celmediasite/audio/thunder.mp3') }}" type="audio/mpeg">  
+    </audio>
+    
+        <audio id="tormenta_audio_2" controls autoplay  loop >
+        <source src="{{  asset('bundles/celmediasite/audio/thunder2.mp3') }}" type="audio/mpeg">  
+    </audio>
+    
+</div>
+    
+    
+
+    <div id="container"  >
+            <ul id="scene" class="scene">
+                    
+                
+                
+                    
+                
+               
+                    
+                    
+                    
+                    
+                    
+                    <li class="layer cn_element calma" data-depth="0.95">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/cielo_calmado.jpg' %}
+                        <img style="margin-top: -250px;" class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    <li class="layer cn_element calma" data-depth="1.5">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/agua_tranquila.jpg' %}
+                        <img style="margin-top:30%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+                    
+                    <li class="layer cn_element calma" data-depth="3.5">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/ola_calmada_3.png' %}
+                        <img style="margin-top:28%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                    
+              
+                    <li class="layer cn_element calma" data-depth="1.9">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/ola_calmada_1.png' %}
+                        <img style="margin-top:28%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    <li class="layer cn_element calma"  data-depth="2.4">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/ola_calmada_2.png' %}
+                        <img style="margin-top:28%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    
+                    
+                    
+                    
+                    
+                    <li class="layer cn_element tormenta " data-depth="0.95">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/cielo_tormenta.jpg' %}
+                       
+                        <img style="margin-top: -100px;" class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    <li class="layer cn_element tormenta " data-depth="1.5">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/agua_calmada.jpg' %}
+                        <img style="margin-top:30%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    <li class="layer cn_element tormenta animated_12" data-depth="1.9">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/ola_agitada_1.png' %}
+                        <img style="margin-top:28%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    <li class="layer cn_element tormenta ola_agitada"  data-depth="2.4">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/ola_agitada_2.png' %}
+                        <img style="margin-top:28%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                
+              
+                    <li class="layer cn_element tormenta animated_15" data-depth="3.5">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/olas/ola_agitada_3.png' %}
+                        <img style="margin-top:28%;"  class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                    
+                    
+                    
+                    <li class="layer" data-depth="0.00">
+                     <section class="rain"></section>                          
+                    </li>
+                         
+                         
+                    <li class="layer cn_barco" data-depth="0.45">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/proa.png' %}
+                        <img    id="timer-img" class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>
+                   
+                
+                    
+                    
+                    
+                    <li id="cabina1" class="layer cn_barco" data-depth="0.1">
+                      {% image '@CelmediaSiteBundle/Resources/public/images/puntaje/cabina1.png' %}
+                        <img   style="  display:none;width: 100%; height: 100%; margin: 5px 0px 0px; margin-top: 100px;"    class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                        
+                    </li>
+                    
+                    
+                    <li id="cabina2"  class="layer cn_barco" data-depth="0.1">
+                      {% image '@CelmediaSiteBundle/Resources/public/images/puntaje/cabina2.png' %}
+                        <img  style="  width: 100%; height: 100%; margin: 5px 0px 0px; margin-top: 100px;"    class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                        
+                    </li>
+                    
+                    
+                    <li id="cabina3"  class="layer cn_barco" data-depth="0.1">
+                      {% image '@CelmediaSiteBundle/Resources/public/images/puntaje/cabina3.png' %}
+                        <img  style="  width: 100%; height: 100%; margin: 5px 0px 0px; margin-top: 100px;"    class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                        
+                    </li>
+                    
+                    
+                    <li id="cabina4" class="layer cn_barco" data-depth="0.1">                                           
+                         {% image '@CelmediaSiteBundle/Resources/public/images/puntaje/cabina4.png' %}
+                        <img   style=" width: 100%; height: 100%; margin: 5px 0px 0px; margin-top: 100px;"    class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}    
+                    </li>
+                    
+                    <li class="layer cn_barco" data-depth="0.1">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/cabina.png' %}
+                        <img  id="cabina" style="width: 100%; height: 100%; margin: 5px 0px 0px; margin-top: 100px;"    class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                          
+                    </li>
+                    
+                    
+                        
+                 
+            </ul>
+    </div>
+    
+{#area del bton modal para mostrar la pregunta  #}
+                    
+<a id="modalBtn"   href="#modal_pregunta" ></a>  
+ 
+ <div id="modal_pregunta" style="display: none;" class="modal-example-content">
+      {% image '@CelmediaSiteBundle/Resources/public/images/cabina_pregunta.jpg' %}
+            <img style="width: 100%; height: 100%; position: absolute;"    class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+      {% endimage %}   
+      <div style="position: absolute;padding-right: 10%;padding-left: 10%;" >
+          <div id="pregunta-container" >
+            {% render(controller('CelmediaSiteBundle:Default:index')) %}
+          </div>
+      </div>
+        
+ </div>
+     
+              
+                    
+                    
+    
+
+       <div style="position: absolute; top: 0; left: 0; z-index: 100;" >
+
+        <div class="container" style="margin-top:60px;">
+
+            <div id="iniciar" class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    
+                    <div style="display: none;" >
+                    <h1 class="texto-blanco text-center texto-header" >Intro</h1>
+
+                    <div class="col-md-6 col-md-offset-3" style="text-align:center;" >
+
+                        {% image '@CelmediaSiteBundle/Resources/public/img/storm.jpg' %}
+                        <img  style="margin:0px; margin-top:30px; margin-bottom:30px;" id="timer-img" class="img-responsive image_parallax" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}
+
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+
+          
+        </div>
+
+    </div>
+
+
+{%  endblock  %}
+
+
+
+
+
+{% block js %}
+    {% javascripts 
+        '@CelmediaSiteBundle/Resources/public/js/jquery-1.11.0.min.js'
+        '@CelmediaSiteBundle/Resources/public/js/bootstrap.js'
+        '@CelmediaSiteBundle/Resources/public/lib/custombox/jquery.custombox.js'
+        '@CelmediaSiteBundle/Resources/public/js/parallax.js'
+        '@CelmediaSiteBundle/Resources/public/js/script.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+
+
+    <script type="text/javascript">
+
+
+
+        $(document).ready( function(){
+            
+            $("#cabina1").hide(); 
+            $("#cabina2").hide(); 
+            $("#cabina3").hide(); 
+            $("#cabina4").hide(); 
+            
+            
+            $('#modalBtn').on('click', function ( e ) {
+                $.fn.custombox( this, {
+                    overlay: true,
+                    effect: 'fadein',
+                    width:          1200,           // Set a fixed total width.
+                    height:         700  ,
+                    speed : 1000  
+                });
+                e.preventDefault();
+            });
+            
+               document.getElementById("audio_lluvia").play();
+                document.getElementById("audio_lluvia").volume = 0;
+                
+                document.getElementById("tormenta_audio_1").play();
+                //document.getElementById("tormenta_audio_1").volume = .3;
+                
+                document.getElementById("tormenta_audio_2").play();
+              
+                
+        
+        {#        $('.cn_element > img').animate({
+                    'left': '10%',
+                    'top': '10%'
+                  }, 10000, 'linear');#}
+                
+        });
+
+
+// Pretty simple huh?
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+
+
+        var comenzo_juego = false;
+        var preguna1_mostrada = false;
+        var preguna2_mostrada = false;
+        var preguna3_mostrada = false;
+        var preguna4_mostrada = false;
+        
+
+        function process_response(response) {
+            puntaje_total = response.puntaje;
+            
+{#            console.log(response);#}
+{#            console.log("puntaje:" + puntaje_total);#}
+            if (response.accion === "restart") {
+                location.reload();
+                
+            }
+            
+            if (response.accion === "empezar") {
+                if (!comenzo_juego) {
+                    
+                    
+                     $("#modalBtn").click();
+                     
+                     empezar();
+                     comenzo_juego = true;
+                   
+                   
+                }
+            }
+            
+            if (response.accion === "mostrar_pregunta_0") {
+                if (!preguna1_mostrada) {
+                    mostrarSiguientePregunta();
+                    preguna1_mostrada = true;
+                    
+                    
+                }
+            }
+            if (response.accion === "mostrar_pregunta_1") {
+                if (!preguna2_mostrada) {
+                    mostrarSiguientePregunta();
+                    preguna2_mostrada = true;
+                }
+            }
+            if (response.accion === "mostrar_pregunta_2") {
+                if (!preguna3_mostrada) {
+                    mostrarSiguientePregunta();
+                    preguna3_mostrada = true;
+                }
+            }
+            if (response.accion === "mostrar_pregunta_3") {
+                if (!preguna4_mostrada) {
+                    mostrarSiguientePregunta();
+                       $.fn.custombox('close');
+                    finJuego();
+{#                    finJuego();#}
+                    //mostrarSiguientePregunta();
+                    preguna4_mostrada = true;
+                }
+            }
+            if (response.accion === "mostrar_pregunta_5") {
+                if (!preguna5_mostrada) {
+                    mostrarSiguientePregunta();
+                    preguna5_mostrada = true;
+
+                    $.fn.custombox('close');
+                    finJuego();
+                }
+            }
+            
+            
+            
+            
+
+        }
+
+
+        function listener() {
+            $.getJSON('{{  path("get_estado") }}', function(response) {
+                process_response(response);
+            });
+        }
+
+
+
+        function mostrarSiguientePregunta(){
+            
+            
+              $(".preguntas:visible").addClass('contestada');
+
+                    $('.contestada').stop(true, true).hide();
+
+
+
+
+                    if ($(".preguntas:visible").hasClass("ultima")) {
+                        $("#cuestionario").hide();
+                        $("#mensaje").stop(true, true).show("fast", function() {
+                            clearTimer();
+                            var min = $("#minutes").text();
+                            var seg = $("#seconds").text();
+                            $("#total-minutos").text(min);
+                            $("#total-segundos").text(seg);
+                            $("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)');
+                            $("#seccion-trivia").css('background-image', 'none');
+                        });
+
+                    } else {
+                        // $("#mensaje-continuar").show("fast",function(){
+                        //           		$("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)' );
+                        // $("#seccion-trivia").css('background-image', 'none');
+                        //           		});
+
+                        // $("#cuestionario").hide();
+                        continuar();
+                        totalSeconds = 121;
+
+                        // $('.preguntas:hidden:not(.contestada):eq(0)').show();	
+                    }
+            
+        }
+
+
+        function contestar(pregunta, respuesta, elemento) {
+
+            var id_pregunta = pregunta;
+            var id_respuesta = respuesta;
+
+            $.post("{{ path('encuesta') }}",
+                    {
+                        encuesta: id_pregunta,
+                        opcion: id_respuesta
+                    },
+            function(response) {
+
+                if (response.code && response.success) {
+                    //do something
+
+
+                    $(elemento).parent().parent().parent().addClass('contestada');
+
+                    $('.contestada').stop(true, true).hide();
+
+
+
+
+                    if ($(elemento).parent().parent().parent().hasClass("ultima")) {
+                        $("#cuestionario").hide();
+                        $("#mensaje").stop(true, true).show("fast", function() {
+                            clearTimer();
+                            var min = $("#minutes").text();
+                            var seg = $("#seconds").text();
+                            $("#total-minutos").text(min);
+                            $("#total-segundos").text(seg);
+                            $("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)');
+                            $("#seccion-trivia").css('background-image', 'none');
+                        });
+
+                    } else {
+                        // $("#mensaje-continuar").show("fast",function(){
+                        //           		$("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)' );
+                        // $("#seccion-trivia").css('background-image', 'none');
+                        //           		});
+
+                        // $("#cuestionario").hide();
+                        continuar();
+                        totalSeconds = 121;
+
+                        // $('.preguntas:hidden:not(.contestada):eq(0)').show();	
+                    }
+
+
+                } else {
+
+
+
+                }
+
+
+
+            }, "json");
+
+        }
+
+
+var puntaje_total = 0 ; 
+
+
+
+
+
+
+ function finJuego(){
+     
+     
+     puntaje_total = parseInt( puntaje_total );
+     
+     if( puntaje_total => 0 && puntaje_total <= 5 ){
+         $("#cabina4").show();         
+     }
+     
+     
+     if( puntaje_total > 5 && puntaje_total <= 10 ){
+         $("#cabina3").show();
+     }
+     
+     
+     if( puntaje_total > 10 && puntaje_total <= 15 ){
+         $("#cabina2").show();
+     }
+     
+     
+     if( puntaje_total > 15 && puntaje_total <= 20 ){
+         $("#cabina1").show();
+     }
+     
+     
+      
+      $("#cabina").animate({opacity:'0'}, 1000);
+     
+     
+      $(".ola_agitada").animate({"MarginTop":"600"} , 'slow' , function(){
+      $(".tormenta").animate({opacity:'0.0'}, 1000);
+         
+        $('.rain').remove();
+     
+     });
+     
+     
+     
+ }
+
+
+// // number of drops created.
+// var nbDrop = 508; 
+ var nbDrop = 858; 
+ var mostrar_lluvia = true ; 
+
+// function to generate a random number range.
+function randRange( minNum, maxNum) {
+  return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+// function to generate drops
+function createRain() {
+
+	for( i=1;i<nbDrop;i++) {
+            if(mostrar_lluvia){
+                
+	var dropLeft = randRange(0,1600);
+	var dropTop = randRange(-1000,1400);
+
+	$('.rain').append('<div class="drop" id="drop'+i+'"></div>');
+	$('#drop'+i).css('left',dropLeft);
+	$('#drop'+i).css('top',dropTop);
+	}
+        
+            }
+
+}
+// Make it rain
+createRain(); 
+
+
+    </script>
+
+
+{% endblock %}
+
+
+
+
+
+

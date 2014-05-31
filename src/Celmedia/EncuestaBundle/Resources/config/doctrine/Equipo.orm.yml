@@ -1,0 +1,22 @@
+Celmedia\EncuestaBundle\Entity\Equipo:
+    type: entity
+    table: equipo
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        foto:
+            type: text
+            nullable: false
+        nombre:
+            type: string
+            length: 140
+            nullable: false
+            
+    lifecycleCallbacks:
+        prePersist:   [ lifecycleFileUpload ]
+        preUpdate:    [ lifecycleFileUpload ]

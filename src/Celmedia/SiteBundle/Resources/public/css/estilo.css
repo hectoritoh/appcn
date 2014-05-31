@@ -1,0 +1,696 @@
+/* Debug */
+@font-face { font-family: roboto_normal; src: url('../../../../../bundles/celmediasite/font/roboto/Roboto-Medium.ttf'); } 
+
+
+
+
+
+.fondoAmarillo{
+	background-color: rgb(255,255,0);
+}
+.fondoAmarillo-a{
+	background-color: rgb(255,255,0);
+	background-color: rgba(255,255,0, 0.5);
+}
+
+.fondoRojo{
+	background-color: rgb(255,0,0);
+}
+.fondoRojo-a{
+	background-color: rgb(255,0,0);
+	background-color: rgba(255,0,0, 0.5);
+}
+.fondoVerde{
+	background-color: rgb(0,255,0);
+}
+.fondoVerde-a{
+	background-color: rgb(0,255,0);
+	background-color: rgba(0,255,0, 0.5);
+}
+.fondoAzul{
+	background-color: rgb(0,0,255);
+}
+.fondoAzul-a{
+	background-color: rgb(0,0,255);
+	background-color: rgba(0,0,255, 0.5);
+}
+.fondoNegro{
+	background-color: rgb(0,0,0);
+}
+.fondoNegro-a{
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.5);
+}
+
+/*************/
+
+
+html, body{
+    /*min-width:800px;*/
+    width: auto !important;
+    /*width: 800px;*/
+
+	height: 100%;
+	font-family: 'robotoregular';
+}
+
+a, a:hover, a:focus, a:active{
+	outline: none;
+}
+
+.navbar-somoshinchada.nav, .navbar-somoshinchada.nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline;
+    /* ie7 fix */
+    *zoom:1;
+    /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+.navbar-inner {
+    text-align: center;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+
+.navbar-brand:focus {
+    outline: 0;
+}
+
+.navbar-somoshinchada a {
+    color: #fff;
+}
+
+
+.navbar-toggle {
+    padding: 4px 6px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e6634d;
+    border: 1px solid #378884; 
+}
+.navbar-toggle .icon-bar{
+	background-color: #4B484C;
+}
+
+.navbar-toggle:focus,
+.navbar-toggle:active {
+    outline: 0;
+}
+
+.navbar-somoshinchada{
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.8);	
+}
+
+
+.row-sinborde{
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+.row-espaciado-m{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.row-espaciado-p{
+	padding-top: 10px;
+	padding-bottom: 10px;	
+}
+
+.v-center-contenedor {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.v-center-contenido{
+    display: table-cell;
+    vertical-align: middle;
+    /*text-align: center;*/
+}
+
+.seccion-sh{
+	height: 500px;
+}
+
+.alto-completo{
+	min-height: 100%;
+	/*height: 100%;*/
+	/*width: 100%;*/
+	position: relative;
+}
+.ancho-completo{
+	width: 100%;
+	position: relative;
+}
+.alto-titular{
+	position: relative;
+	min-height: 20%;
+	height: 20%;
+}
+.alto-hinchada{
+	position: relative;
+	min-height: 80%;
+	height: 80%;
+}
+.alto-footer{
+	position: relative;
+	min-height: 100px;
+	height: 100px;
+}
+.alto-publicidad{
+	height: 100px;
+}
+.row-espaciado-m20{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#seccion-header{
+	background-image: url("../../../../../bundles/celmediasite/img/BG/IMG-BG-home.jpg");
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#seccion-publicidad-1{
+	height: 100px;
+	background-color: #393939;
+}
+#seccion-trivia{
+	background-image: url("../../../../../bundles/celmediasite/img/BG/IMG-BG-trivia.jpg");
+	background-color: #BC0000;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#seccion-publicidad-2{
+	height: 100px;
+	background-color: #393939;
+}
+
+.texto-blanco{
+	color: #FFFFFF;
+}
+
+.texto-negro{
+	color: #000000;
+}
+
+.texto-rojo{
+	color: #cc0000;
+}
+
+.mayusculas{
+	text-transform: uppercase;
+}
+
+.img-responsive-centrar{
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+.img-logohh{
+	height: 350px;
+}
+
+.btn-palahinchada{
+	color: #ffffff;
+	border: 1px solid #ffffff;
+	background-image: none;
+	background-color: transparent;
+	width: 100%;
+	border-radius: 0px;
+	text-transform: uppercase;
+	font-family: 'robotoregular';
+}
+.btn-palahinchada:hover,
+.btn-palahinchada:active,
+.btn-palahinchada:focus{
+	color: #cc0000;
+	border: 1px solid #cc0000;
+}
+
+.titular-g{
+	font-family: 'robotoblack';
+}
+
+
+.fondoGradiente{
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/img-degradado.png");
+	background-repeat: repeat-x;
+	background-color: #000000;
+}
+
+.fondoDegradado{
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/img-degradado-2.png");
+	background-repeat: repeat-x;
+	position: absolute;
+	bottom: 0;
+	/* background-color: red; */
+	height: 75%;
+	width: 100%;
+	background-size: contain;
+	background-position: center bottom;
+}
+
+
+
+/*******************/
+.alto-25p{
+	height: 25%;
+}
+.alto-personas-home{
+	height: 75%;
+	min-height: 340px;
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/Sombra-home.png");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 100% 32%;
+	position: relative;
+}
+
+.fondoSombra{
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/Sombra-home.png");
+    background-position: center -50%;
+    background-repeat: no-repeat;
+    background-size: 100% 84%;
+}
+
+#home-descripcion{
+	position: absolute;
+	width: 100%;
+}
+#home-comentaristas{
+	position: absolute;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.img-comentarista-home{
+	background-position: center 45px;
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+    background-size: 100% auto;
+    width: 17%;
+    min-width: 250px;
+    position: absolute;
+}
+
+#comentarista-1{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/1-Equipo-izquieda-Arturo-Magallanes.png");
+	right: 50%;
+}
+#comentarista-2{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/2-Equipo-izquieda.png");
+	right: 60%;
+}
+#comentarista-3{
+	background-image: url('../../../../../bundles/celmediasite/img/img-home/3-Equipo-izquieda.png');
+	right: 70%;
+}
+#comentarista-4{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/4-Equipo-izquieda-Carlos-galvez-.png");
+	right: 80%;
+}
+#comentarista-5{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/5-Equipo-Derechos-Patricio-Cornejo.png");
+	left: 50%;
+}
+#comentarista-6{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/6-Equipo-Derechos.png");
+	left: 60%;
+}
+#comentarista-7{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/7-Equipo-Derechos.png");
+	left: 70%;
+}
+#comentarista-8{
+	background-image: url("../../../../../bundles/celmediasite/img/img-home/8-Equipo-Derechos.png");
+	left: 80%;
+}
+.btn-popover-comentarista-nombre{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	cursor: pointer;
+	/*background-image: url('../../../../../bundles/celmediasite/img/Varios/bullet.png');*/
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/Tooltip.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-align: center;
+	margin: 0 auto;
+	top: 200px;
+	z-index: 10;
+}
+.btn-popover-comentarista-nombre:hover,
+.btn-popover-comentarista-nombre:focus,
+.btn-popover-comentarista-nombre:active{
+	/*background-image: url('../../../../../bundles/celmediasite/img/Varios/bullet-hover.png');*/
+}
+.btn-popover-comentarista-nombre.izq{
+	left: 18%;
+}
+.btn-popover-comentarista-nombre.der{
+	right: 18%;
+}
+.popover-hinchada-content{
+	display: none;
+}
+
+.btn-popover-comentarista-nombre+.popover{
+	background-color: rgb(255,255,255);
+	background-color: rgba(255,255,255, 0.8);
+	border-radius: 0;
+}
+.btn-popover-comentarista-nombre+.popover.bottom .arrow:after{
+	border-bottom-color: rgb(255,255,255);
+	border-bottom-color: rgba(255,255,255, 0.8);
+}
+.btn-popover-comentarista-nombre+.popover.top .arrow:after{
+	border-bottom-color: rgb(255,255,255);
+	border-bottom-color: rgba(255,255,255, 0.8);
+}
+.btn-popover-comentarista-nombre+.popover.top > .arrow:after{
+	border-top-color: rgb(255,255,255);
+	border-top-color: rgba(255,255,255, 0.8);
+}
+.btn-popover-comentarista-nombre+.popover{
+	text-align: center;
+}
+
+.comentarista-nombre{
+	font-family: 'robotoregular';
+}
+.comentarista-tw{
+	font-family: 'robotoblack';
+}
+.txt-titular{
+	font-family: 'squada_oneregular';
+}
+.txt-texto-modal{
+	font-family: 'robotolight';
+	font-size: 16px;
+}
+.txt-texto-form{
+	font-family: 'robotolight';
+	font-size: 13px;	
+}
+.btn-hh{
+	width: 100%;
+	position: relative;
+	background-image: none;
+	background-color: #cc0000;
+	color: #FFFFFF;
+}
+.btn-hh:hover,
+.btn-hh:active,
+.btn-hh:focus{
+	color: #FFFFFF;
+	background-color: #e20000;
+}
+
+.tw-nombre{
+	font-family: 'squada_oneregular';
+	font-size: 25px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.tw-cta{
+	font-family: 'robotoregular';
+	font-size: 18px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+a.tw-cta:hover,
+a.tw-cta:active,
+a.tw-cta:focus{
+	color: #DDDDDD;
+	text-decoration: none;
+}
+
+.tw-img{
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.tw-linea{
+	position: relative;
+	margin: 15px auto;
+	text-align: center;
+}
+.tweet-hincha{
+	font-family: 'robotoregular';
+	color: #ffffff;
+	width: 80%;
+	margin: 0 auto;
+}
+.tweet-hincha a{
+	font-family: 'robotoregular';
+	color: #ff0000;	
+}
+.titular-web{
+	font-family: 'squada_oneregular';
+	font-size: 80px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.texto-header{
+	font-family: 'robotolight';
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.titular-palahinchada{
+	font-family: 'squada_oneregular';
+	font-size: 60px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.subtitular-palahinchada{
+	font-family: 'squada_oneregular';
+	font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+
+.img-durodelahinchada{
+	position: relative;
+}
+
+.navbar-somoshinchada .nav > li > a:hover,
+.navbar-somoshinchada .nav > li > a:focus,
+.navbar-somoshinchada .nav > li > a:active{
+	background-color: transparent;
+	color: #cc0000;
+}
+
+
+
+.lb-v-scrollbar{
+	background-color: transparent;
+}
+.lb-v-scrollbar-slider{
+	background-color: #FFFFFF;
+}
+
+
+.bx-wrapper{
+	position: relative;
+	height: 100%;
+	max-width: 100% !important;
+}
+.bx-wrapper .bx-viewport{
+	height: 100% !important;
+	background: none;
+	background-color: transparent;
+    border: none;
+    box-shadow: none;
+    left: 0;
+}
+
+.slide{
+	background-color: #000000;
+	text-align: center;
+	/*overflow-x: hidden;
+    overflow-y: auto;*/
+}
+
+.bx-wrapper .bx-controls-direction a,
+.bx-wrapper .bx-controls-direction a:hover{
+    background-color: rgba(250, 250, 250, 0.8);
+    background-position: center center;
+    height: 100%;
+    margin-top: 0;
+    opacity: 1;
+    top: 0;
+    width: 20%;
+    z-index: 10;
+}
+
+.bx-wrapper .bx-prev{
+	background-image: url('../../../../../bundles/celmediasite/img/Flechas/Flecha-Izquierda.png');
+	background-repeat: no-repeat;
+	left: 0px;
+}
+.bx-wrapper .bx-prev:hover{
+	background-image: url('../../../../../bundles/celmediasite/img/Flechas/Flecha-Izquierda-hover.png');	
+	background-repeat: no-repeat;
+}
+.bx-wrapper .bx-next{
+	background-image: url('../../../../../bundles/celmediasite/img/Flechas/Flecha-derecha.png');
+	background-repeat: no-repeat;
+	right: 0px;
+}
+.bx-wrapper .bx-next:hover{
+	background-image: url('../../../../../bundles/celmediasite/img/Flechas/Flecha-derecha-hover.png');	
+	background-repeat: no-repeat;
+}
+
+.slide-header{
+	height: 10%;
+	min-height: 65px;
+	background-color: #323232;
+	padding-top: 5px;
+}
+.slide-content{
+	height: 90%;
+	background-color: #323232;
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/img-degradado-2.png");
+	background-position: center top;
+	background-repeat: repeat-x;
+	background-size: contain;
+}
+
+
+.hh-modal-container{
+	width: 559px;
+	height: 559px;
+	background-image: url("../../../../../bundles/celmediasite/img/Varios/Recuadro-light.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.hh-header-modal{
+	height: 195px;
+}
+
+.icono-correcto{
+	width: 22px;
+	height: 21px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-top: 5px;
+}
+.icono-correcto.icono-ok{
+	background-image: url("../../../../../bundles/celmediasite/img/Iconos/icono-correcto.png");
+}
+.icono-correcto.icono-not{
+	background-image: url("../../../../../bundles/celmediasite/img/Iconos/icono-incorrecto.png");
+}
+
+.custom-checkbox{
+	width: 23px;
+	height: 19px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	top: 3px;
+	background: url("../../../../../bundles/celmediasite/img/Iconos/check-off.png") no-repeat;
+}
+.custom-checkbox:hover{
+	background: url("../../../../../bundles/celmediasite/img/Iconos/check-off.png") no-repeat;
+}
+.custom-checkbox.selected{
+	background: url("../../../../../bundles/celmediasite/img/Iconos/check-on.png") no-repeat;
+}
+.custom-checkbox input[type="checkbox"]{
+	margin: 0;
+	position: absolute;
+	z-index: 2;            
+	cursor: pointer;
+	outline: none;
+	opacity: 0;
+	/* CSS hacks for older browsers */
+	_noFocusLine: expression(this.hideFocus=true); 
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-khtml-opacity: 0;
+	-moz-opacity: 0;
+    height: 20px;
+    left: 0;
+    width: 20px;
+}
+
+
+/*
+@media (min-width: 1200px){
+	
+}
+
+@media (min-width: 860px) and (max-width: 1199px) {
+	
+}
+
+@media (max-width: 859px){
+	
+}
+*/
+
+.respuesta_item{
+ position: absolute;   
+}
+
+
+
+.seccion-trivia-mobile{
+    height: 100%;
+}
+#wrapper {display:table; height: 100%; width: 100%; }
+#cell {display:table-cell; vertical-align:middle;}
+
+
+
+
+.titulo-encuesta-desktop{
+    font-weight: normal !important;
+    font-size: 20px !important ;
+    text-align: justify !important;
+    
+}
+ 
+
+#pregunta-container{
+    margin-top: 200px;
+}
+
+.preguntas-desktop{
+    
+}
+
+
+.touched > label {
+    color: green !important;
+}

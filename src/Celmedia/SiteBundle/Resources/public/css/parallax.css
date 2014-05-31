@@ -1,0 +1,308 @@
+body {
+  font-family: monospace;
+  font-size: 18px;
+  background: #111;
+  color: #666;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin-right: 1em;
+  padding: 0.4em 0;
+  cursor: pointer;
+}
+
+button {
+  border: 10px solid #00FFAA;
+  font-family: monospace;
+  position: absolute;
+  line-height: 60px;
+  text-align: right;
+  padding: 0 1.2em;
+  background: #444;
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  height: 80px;
+  width: 80%;
+  top: 260px;
+  margin: 0;
+  left: 10%;
+}
+
+button:hover {
+  background: #00FFAA;
+}
+
+input[type=checkbox] + label:before {
+  display: inline-block;
+  position: relative;
+  background: #444;
+  margin-right: 8px;
+  content: "";
+  height: 16px;
+  width: 16px;
+  top: 1px;
+}
+
+input[type=checkbox]:checked + label:before {
+  background: #00FFAA;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  margin: 0 auto; 
+}
+
+.scene {
+  padding: 0;
+  margin: 0;
+}
+
+.fill {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  left: 5%;
+  top: 5%;
+}
+
+.expand-width {
+  width: 100%;
+}
+
+.border {
+  border: 2px dashed #00FFAA;
+}
+
+.aspect {
+  opacity: 0.2;
+}
+/*
+.layer:nth-child(1) {
+  opacity: 0.15;
+}
+.layer:nth-child(1) button {
+  -webkit-transform: rotate(150deg);
+}
+
+.layer:nth-child(2) {
+  opacity: 0.30;
+}
+.layer:nth-child(2) button {
+  -webkit-transform: rotate(120deg);
+}
+
+.layer:nth-child(3) {
+  opacity: 0.45;
+}
+.layer:nth-child(3) button {
+  -webkit-transform: rotate(90deg);
+}
+
+.layer:nth-child(4) {
+  opacity: 0.60;
+}
+.layer:nth-child(4) button {
+  -webkit-transform: rotate(60deg);
+}
+
+.layer:nth-child(5) {
+  opacity: 0.75;
+}
+.layer:nth-child(5) button {
+  -webkit-transform: rotate(30deg);
+}
+
+.layer:nth-child(6) {
+  opacity: 0.90;
+}
+.layer:nth-child(6) button {
+}
+
+*/
+
+
+
+
+
+
+
+html{height:100%;}
+body {
+background:#0D343A;
+background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(#000000)  );
+background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+
+overflow:hidden;}
+
+
+.drop {
+  background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+  background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+  width:1px;
+  height:89px;
+  position: absolute;
+  bottom:200px;
+  -webkit-animation: fall .63s linear infinite;
+  -moz-animation: fall .63s linear infinite;
+  
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+  to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+  to {margin-top:900px;}
+}
+
+
+
+
+.cn_element{
+ position: absolute; display: block; left: 0px; top: 0px; transform: translate3d(-130.8px, -57.6px, 0px); transform-style: preserve-3d; backface-visibility: hidden;
+ 
+ 
+    width: 120%;
+    left:-5%;
+}
+
+.cn_element_inner:after{
+     background-color: #000000;
+    content: "";
+    display: block;
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+.cn_element_inner{
+     animation: 4s linear 0.1s normal none infinite wave;
+      left: -100%;
+    position: absolute;
+    width: 300%;
+}
+
+.cn_barco{
+    width: 100%;
+}
+
+
+.animated {
+    
+    position: absolute;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit 9s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit 9s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit 9s linear infinite; /* Opera 12+ */
+            animation: myOrbit 9s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */    
+}
+
+
+.animated_12 {
+    
+    position: absolute;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit 12s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit 12s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit 12s linear infinite; /* Opera 12+ */
+            animation: myOrbit 12s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */    
+}
+
+.animated_15 {
+    
+    position: absolute;
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit 15s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit 15s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit 15s linear infinite; /* Opera 12+ */
+            animation: myOrbit 15s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */    
+}
+
+
+
+.ola_agitada {
+    
+    /* 
+     * Make the initial position to be the center of the circle you want this
+     * object follow.
+     */
+    position: absolute;
+/*    left: 315px;
+    top: 143px;*/
+
+    /*
+     * Sets up the animation duration, timing-function (or easing)
+     * and iteration-count. Ensure you use the appropriate vendor-specific 
+     * prefixes as well as the official syntax for now. Remember, tools like 
+     * CSS Please are your friends!
+     */
+    -webkit-animation: myOrbit 5s linear infinite; /* Chrome, Safari 5 */
+       -moz-animation: myOrbit 5s linear infinite; /* Firefox 5-15 */
+         -o-animation: myOrbit 5s linear infinite; /* Opera 12+ */
+            animation: myOrbit 5s linear infinite; /* Chrome, Firefox 16+, 
+                                                      IE 10+, Safari 5 */
+    
+}
+
+
+
+/*
+ * Set up the keyframes to actually describe the begining and end states of 
+ * the animation.  The browser will interpolate all the frames between these 
+ * points.  Again, remember your vendor-specific prefixes for now!
+ */
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+    from { -moz-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -moz-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+    from { -o-transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { -o-transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}

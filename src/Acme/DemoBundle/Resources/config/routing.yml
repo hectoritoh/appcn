@@ -1,0 +1,25 @@
+_welcome:
+    pattern:  /
+    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+
+_demo_secured:
+    resource: "@AcmeDemoBundle/Controller/SecuredController.php"
+    type:     annotation
+
+_demo:
+    resource: "@AcmeDemoBundle/Controller/DemoController.php"
+    type:     annotation
+    prefix:   /demo
+
+#Seccion de pruebas @fzzio
+obtener_tweets:
+    path:      /feed/{username}/{cantidad}
+    defaults:  { _controller: AcmeDemoBundle:Welcome:feed }
+
+obtener_tweets_2:
+    path:      /feedusuariohashtag/{username}/{hashtag}
+    defaults:  { _controller: AcmeDemoBundle:Welcome:getTweetsHashtag }
+
+obtener_tweets_3:
+    path:      /hashtag/{hashtag}
+    defaults:  { _controller: AcmeDemoBundle:Welcome:getHashtag }

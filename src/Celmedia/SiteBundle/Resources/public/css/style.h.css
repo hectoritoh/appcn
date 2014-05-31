@@ -1,0 +1,28 @@
+.font-style {
+    font-family: 'squada_oneregular';
+    text-transform: uppercase;
+}
+
+
+
+
+h5.texto-header{
+	margin-top: 15px;
+}
+
+#social-connect{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+.ranking-text > a{
+	text-align:center;
+	font-size:40px;
+	color: white;
+	text-decoration: underline;
+}
+
+#timer-img{
+	margin: 30px;
+}

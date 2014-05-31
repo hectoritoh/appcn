@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Toyocosta :: Somos La Hinchada</title>
+        {% block stylesheets %}
+            {% stylesheets
+				'@CelmediaSiteBundle/Resources/public/css/bootstrap.css'
+				'@CelmediaSiteBundle/Resources/public/fonts/fuentes-adicionales.css'
+                '@CelmediaSiteBundle/Resources/public/css/lionbars.css'
+                '@CelmediaSiteBundle/Resources/public/css/estilo.css'
+				'@CelmediaSiteBundle/Resources/public/css/style.h.css'
+				filter='cssrewrite'
+            %}
+            <link rel="stylesheet" type="text/css" href="{{ asset_url }}" media="all" />
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="hh-modal-container">
+        	<div class="container-fluid">
+				<div class="row hh-header-modal">
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h2 class="texto-negro txt-titular">¡ESTAMOS A UN PASO DE ARRANCAR EL PARTIDO!</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1 text-center">
+						<span class="texto-negro txt-texto-modal">Ingresa tu correo, sigue nuestra cuenta y acepta los términos y condiciones para empezar</span>
+					</div>
+				</div>
+				<form id="form-login">
+					<div class="row row-espaciado-m">
+						<div class="col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1 text-right" style="padding-top: 5px;">
+							<span class="texto-negro txt-texto-form lbl-form">Correo electrónico:</span>
+						</div>
+						<div class="col-md-5 col-sm-5 text-left">
+							<input class="texto-negro form-control txt-texto-form" type="email">
+						</div>
+						<div class="col-md-1 col-sm-1 text-left">
+							<div class="icono-correcto icono-not"></div>
+						</div>
+					</div>
+					<div class="row row-espaciado-m">
+						<div class="col-md-7 col-sm-7 col-md-offset-3 col-sm-offset-3 text-center">
+							<div class="fb-like-box" data-href="https://www.facebook.com/toyocosta" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
+						</div>
+						<div class="col-md-1 col-sm-1 text-left">
+							<div class="icono-correcto icono-ok"></div>
+						</div>
+					</div>
+					<div class="row row-espaciado-m">
+						<div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
+							<input type="checkbox" name="ok" value="ok"><span class="texto-negro txt-texto-form">He leído y acepto los Términos y Condiciones de uso.</span>
+						</div>
+						<div class="col-md-1 col-sm-1 text-left">
+							<div class="icono-correcto icono-ok"></div>
+						</div>
+					</div>
+					<div class="row row-espaciado-m">
+						<div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4 text-center">
+							<button class="btn btn-hh">LISTO</button>
+						</div>
+					</div>
+				</form>
+        	</div>
+        </div>
+
+        {% block javascripts %}
+            {% javascripts 
+				'@CelmediaSiteBundle/Resources/public/js/jquery-1.9.1.js'
+				'@CelmediaSiteBundle/Resources/public/js/jquery-ui-1.9.2.custom.js'
+				'@CelmediaSiteBundle/Resources/public/js/bootstrap.js'
+				'@CelmediaSiteBundle/Resources/public/js/modals-js.js'
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
+
+
+        {% block js_extra %}
+        	<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=1451217175121108&version=v2.0";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+            
+        {% endblock %}
+
+    </body>
+</html>

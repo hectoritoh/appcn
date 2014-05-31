@@ -1,0 +1,67 @@
+#celmedia_site_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: CelmediaSiteBundle:Default:index }
+
+# mostrar_tweets:
+#     path:      /mostrartweets
+#     defaults:  { _controller: CelmediaSiteBundle:Default:getTimeLine }
+
+
+# site_somos_hinchada:
+#     path:      /somoshinchada
+#     defaults:  { _controller: CelmediaSiteBundle:Default:index }  
+
+homepage:
+    path:      /home
+    defaults:  { _controller: CelmediaSiteBundle:Default:home }  
+
+
+video:
+    path:      /
+    defaults:  { _controller: CelmediaSiteBundle:Default:video }  
+
+
+mobile:
+    path:      /mobile
+    defaults:  { _controller: CelmediaSiteBundle:Default:mobile }  
+
+encuesta:
+    pattern:  /encuesta
+    defaults: { _controller: CelmediaSiteBundle:Default:encuesta }
+
+
+
+
+encuesta_mobile:
+    pattern:  /encuesta_mobile
+    defaults: { _controller: CelmediaSiteBundle:Mobile:encuesta }
+
+
+get_estado:
+    pattern:  /get_estado
+    defaults: { _controller: CelmediaSiteBundle:Default:getEstado }
+    options:
+        expose: true
+
+
+
+
+set_estado:
+    pattern:  /set_estado/{modo}/{accion}
+    defaults: { _controller: CelmediaSiteBundle:Default:setEstado }
+    options:
+        expose: true
+    
+    
+    
+# feed_usuario:
+#     path:      /timeline/{username}/{cantidad}
+#     defaults:  { _controller: CelmediaSiteBundle:TwitterFeed:obtenerFeedXUsuario }
+
+# feed_usuario_hashtag:
+#     path:      /timeline_hashtag/{username}/{hashtag}
+#     defaults:  { _controller: CelmediaSiteBundle:TwitterFeed:getTweetsHashtag }
+
+# modal_login:
+#     path:      /login
+#     defaults:  { _controller: CelmediaSiteBundle:Default:login }

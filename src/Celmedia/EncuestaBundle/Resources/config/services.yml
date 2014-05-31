@@ -1,0 +1,27 @@
+
+parameters:
+    my_user_provider.class: Celmedia\EncuestaBundle\Provider\FOSUBUserProvider
+ 
+services:
+    my_user_provider:
+        class: "%my_user_provider.class%"
+        #this is the place where the properties are passed to the UserProvider - see config.yml
+        arguments: [@fos_user.user_manager,{facebook: facebook_id , twitter: twitter_id}]
+
+    celmedia_encuesta.admin.trivia:
+        class: Celmedia\EncuestaBundle\Admin\TriviaAdmin
+        arguments: [~, Celmedia\EncuestaBundle\Entity\Trivia, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Trivia}
+
+    celmedia_encuesta.admin.pregunta:
+        class: Celmedia\EncuestaBundle\Admin\PreguntaAdmin
+        arguments: [~, Celmedia\EncuestaBundle\Entity\Pregunta, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Pregunta}
+
+    celmedia_encuesta.admin.respuesta:
+        class: Celmedia\EncuestaBundle\Admin\RespuestaAdmin
+        arguments: [~, Celmedia\EncuestaBundle\Entity\Respuesta, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Respuesta}

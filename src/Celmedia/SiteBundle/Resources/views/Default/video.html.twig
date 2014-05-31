@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        
+   </head>
+    <body id="page-top">
+
+
+        <video autoplay style="width: 100%; height: 100%;" src="{{  asset('bundles/celmediasite/video/intro.mov') }}">
+        video not supported
+   </video>
+
+    </body>
+    
+    
+    <script>
+        
+        
+        
+    var video = document.getElementsByTagName('video')[0];
+
+    video.onended = function(e) {
+      window.location= "{{  path('homepage') }}"; 
+    };
+</script>
+</html>

@@ -1,0 +1,293 @@
+
+
+
+		<div id="cuestionario" class="row" style="display:none;">
+
+			<div class="col-md-8 col-md-offset-2">
+				<form id="trivia" method="post">
+										
+					{#{% for opcion in trivia %}#}
+					    
+					    {% for pregunta in encuesta %}		
+					    <div class="preguntas" style="{% if loop.index > 1 %} display:none; {% endif %} ">
+					    	<h1 class="titulo-encuesta">{{ pregunta.pregunta }}</h1><br />
+					    
+							<div class="col-md-8" style="">
+
+								{% for respuesta in pregunta.respuestas %}
+										<div class="respuesta">
+										<input type="radio" id="{{  respuesta.id }}" name="respuesta" value="" onclick="contestar( {{ pregunta.id }} , {{  respuesta.id }} , this  )"/><label for="{{  respuesta.id }}"><span></span> {{ respuesta.respuesta  }}</label>
+										</div>
+
+									<br />
+
+								{% endfor %}
+
+						    </div>
+				    	    
+
+					    </div>
+						    
+
+					    {% endfor %}
+
+					{#{% endfor %}#}
+
+
+					<div class="col-md-4">		
+						<div class="cronometro img-responsive">
+						<!-- <p style="font-size:12px; color:#fff;margin-bottom:0px;">Pregunta 1</p> -->
+					    <span id="minutes">00</span>:<span id="seconds">00</span>
+						</div>
+						<!-- <button onclick="timer()">Start</button>
+						<button onclick="clearTimer()">Stop</button> -->
+					</div>
+				</form>
+
+
+				
+			</div>
+
+		</div>
+		<div id="mensaje-continuar" class="row text-center" style="display:none;">
+			<div style="margin-top:30px;"></div>
+			<div class="col-md-4 col-md-offset-4">
+				{% image '@CelmediaEncuestaBundle/Resources/public/img/icono-perdiste.png' %}
+	            	<img src="{{ asset_url }}" class="img-responsive" alt="ganaste" />
+	            {% endimage %}
+
+			</div>
+
+			<div class="col-md-12">
+				<h2 class="msm-final" style="font-family: 'squada_oneregular';font-size:30pt;font-weight:bold;">&#161;CONTINUA CON EL EJERCICIO PRACTICO!</h2>
+				<!-- <h4 class="msm-final" >AHORA MIRA EL RANKING PARA VER TU POSICI&Oacute;N</h4> -->
+
+			</div>
+
+			<div onclick="continuar();" class="col-md-4 col-md-offset-4 btn-lg btn-ver-ranking">CONTINUAR</div>
+
+		</div>
+
+		<div id="mensaje" class="row text-center" style="display:none;">
+			<!-- <h3 style="color: #BE0200;font-weight: bold;">TIEMPO <span id="total-minutos"></span>:<span id="total-segundos"></span> SEGUNDOS </h3> -->
+			<div class="col-md-4 col-md-offset-4">
+
+				{% image '@CelmediaSiteBundle/Resources/public/img/captain.jpg' %}
+	            <img src="{{ asset_url }}" class="img-responsive" alt="ganaste" />
+	            {% endimage %}
+			</div>
+
+			<div class="col-md-12">
+			<h2 class="msm-final" style="font-family: 'squada_oneregular';font-size:30pt;font-weight:bold;">MUY BIEN HAZ TERMINADO BIEN</h2>
+			<h4 class="msm-final" >TU PUNTAJE FINAL: 85 puntos</h4>
+
+			</div>
+
+			<!-- <div onclick="ranking();" class="col-md-4 col-md-offset-4 btn-lg btn-ver-ranking">VER RANKING</div> -->
+
+		</div>
+		<div id="ranking" class="row text-center" style="display:none;">
+
+				<h1 class="txt-ranking">RANKING</h1>
+
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs nav-justified">
+				  <li class="active"><a href="#home" data-toggle="tab">RANKING DEL D&Iacute;A</a>
+				  	<!-- <div class="triangle"></div> -->
+				  </li>
+
+				  <li><a href="#mes" data-toggle="tab">RANKING DEL MES</a></li>
+				  <li><a href="#posicion" data-toggle="tab">VER MI POSICI&Oacute;N</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content bloque">
+					<div class="tab-pane active" id="home">
+
+					  	<ul class="list-dia">
+							<li><span class="numeracion">1.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        Pablo Marmol Picapiedra
+						    </li>
+						    <li><span class="numeracion">2.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        Pablo Marmol Picapiedra
+						    </li>
+						    <li><span class="numeracion">3.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        Pablo Marmol Picapiedra
+						    </li>
+						    <li><span class="numeracion">4.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        Pablo Marmol Picapiedra
+						    </li>
+						    <li><span class="numeracion">5.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        Pablo Marmol Picapiedra
+						    </li>
+						</ul>
+
+					</div>
+					<div class="tab-pane" id="mes">
+						<ul class="list-dia">
+							<li><span class="numeracion">1.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        <label>Pedro Picapiedra</label>
+						    </li>
+						    <li><span class="numeracion">2.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        <label>Pablo Picapiedra</label>
+						    </li>
+						    <li><span class="numeracion">3.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        <label>Pablo Picapiedra</label>
+						    </li>
+						    <li><span class="numeracion">4.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        <label>Pablo Picapiedra</label>
+						    </li>
+						    <li><span class="numeracion">5.</span>
+								{% image '@CelmediaEncuestaBundle/Resources/public/img/avatar.png' %}
+						        <img src="{{ asset_url }}" class="avatar" alt="ranking" />
+						        {% endimage %} 
+						        <label>Pablo Picapiedra</label>
+						    </li>
+						</ul>
+
+					</div>
+					<div class="tab-pane" id="posicion">
+						holaa
+
+
+					</div>
+				</div>
+
+		</div>
+
+
+		<script type="text/javascript">
+
+
+			var totalSeconds = 121 ,
+			    timer_handle;
+
+			function setTime() {
+			    --totalSeconds;
+			    document.getElementById("seconds").innerHTML = pad(totalSeconds % 60);
+			    document.getElementById("minutes").innerHTML = pad(parseInt(totalSeconds / 60, 10));
+			}
+
+			function pad(val) {
+			    var valString = val + "";
+			    if (valString.length < 2) {
+			        return "0" + valString;
+			    } else {
+			        return valString;
+			    }
+			}
+
+			function timer() {
+			    if (!timer_handle) {			        
+			        timer_handle = setInterval(setTime, 1000);
+			    }
+			}
+
+			function clearTimer() {
+			    if (timer_handle) {
+			        clearInterval(timer_handle);
+			    }
+			    // alert(document.getElementById("minutes").innerHTML + ':' + document.getElementById("seconds").innerHTML);
+			}
+
+
+			function contestar(pregunta, respuesta, elemento){
+
+				var id_pregunta = pregunta;
+				var id_respuesta = respuesta;
+
+			    $.post("{{ path('encuesta') }}" ,  
+			            {  
+			                encuesta:  id_pregunta  , 
+			                opcion :  id_respuesta
+			            }  , 
+			            function( response){
+
+			                if(response.code && response.success){
+			                      //do something
+
+			                    
+			                    $(elemento).parent().parent().parent().addClass('contestada');
+
+								$('.contestada').stop(true, true).hide();
+
+								
+								
+
+								if ( $(elemento).parent().parent().parent().hasClass("ultima") ) {
+									$("#cuestionario").hide();
+									$("#mensaje").stop(true, true).show("fast", function(){
+										clearTimer();
+										var min = $("#minutes").text();
+										var seg = $("#seconds").text();
+										$("#total-minutos").text(min);
+										$("#total-segundos").text(seg);
+										$("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)' );
+										$("#seccion-trivia").css('background-image', 'none');
+									});
+									
+								}else{
+									// $("#mensaje-continuar").show("fast",function(){
+			      //           		$("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)' );
+									// $("#seccion-trivia").css('background-image', 'none');
+			      //           		});
+
+			                		// $("#cuestionario").hide();
+continuar();
+			                		totalSeconds = 121 ; 
+
+									// $('.preguntas:hidden:not(.contestada):eq(0)').show();	
+								}
+			                	
+
+			                }else{
+
+			 
+			                	
+			                }
+
+			                 
+
+			        }, "json");
+
+			}
+		</script>
+
+
+		{% block javascripts %}
+			{% javascripts 
+				'@CelmediaSiteBundle/Resources/public/js/jquery-1.11.0.min.js'
+				'@CelmediaSiteBundle/Resources/public/js/bootstrap.js'
+				'@CelmediaEncuestaBundle/Resources/public/js/script.js'
+			 %}
+			 <script type="text/javascript" src="{{ asset_url }}"></script>
+			{% endjavascripts %}
+		{% endblock %}

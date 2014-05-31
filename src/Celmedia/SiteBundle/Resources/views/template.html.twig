@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        
+        <title>Cerveceria nacional</title>
+        {% block stylesheets %}
+            {% stylesheets
+                '@CelmediaSiteBundle/Resources/public/css/bootstrap.css'
+                '@CelmediaSiteBundle/Resources/public/fonts/fuentes-adicionales.css'
+                '@CelmediaSiteBundle/Resources/public/css/jquery.bxslider.css'
+                '@CelmediaSiteBundle/Resources/public/css/lionbars.css'
+                '@CelmediaSiteBundle/Resources/public/css/estilo.css'
+                '@CelmediaSiteBundle/Resources/public/css/style.h.css'
+                '@CelmediaSiteBundle/Resources/public/css/style.y.css'
+                '@CelmediaSiteBundle/Resources/public/css/parallax.css'
+                '@CelmediaSiteBundle/Resources/public/lib/custombox/jquery.custombox.css'
+
+                filter='cssrewrite'
+            %}
+            <link rel="stylesheet" type="text/css" href="{{ asset_url }}" media="all" />
+            {% endstylesheets %}
+        {% endblock %}
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+    </head>
+    <body id="page-top">
+
+
+                    {% render(controller('CelmediaSiteBundle:Default:restart')) %}
+        
+        <div class="" id="seccion-trivia">
+
+            {%  block content %}
+
+            {%  endblock %}
+
+        </div>
+
+
+        {% block js %}
+
+        {% endblock %}
+
+    </body>
+</html>

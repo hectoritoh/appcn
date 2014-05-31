@@ -1,0 +1,324 @@
+{% extends 'CelmediaSiteBundle::template.mobile.html.twig' %}
+
+{%  block content %}        
+
+    
+    <div style="display: none;" >
+
+   <audio id="beep" controls preload  >
+        <source src="{{  asset('bundles/celmediasite/audio/beep.mp3') }}" type="audio/mpeg">  
+    </audio>
+    
+    
+   <audio id="beep2" controls preload  >
+        <source src="{{  asset('bundles/celmediasite/audio/beep.mp3') }}" type="audio/mpeg">  
+    </audio>
+    
+    
+    
+</div>
+    
+
+    
+    <div class="respuesta_holder" >
+        {% image '@CelmediaSiteBundle/Resources/public/images/pantallas/apagadas.png' %}
+                        <img   style="width: 100%; height: 100%; "   class="respuesta_item" src="{{ asset_url }}" alt="timer" />
+        {% endimage %}  
+        
+        {% image '@CelmediaSiteBundle/Resources/public/images/pantallas/1prendida.png' %}
+        <img style="width: 100%; height: 100%; "  id="respuesta_fader"  class="respuesta_item respuesta_fader"  src="{{ asset_url }}" alt="timer" />
+       {% endimage %}   
+       
+       
+        {% image '@CelmediaSiteBundle/Resources/public/images/pantallas/2prendida.png' %}
+        <img style="width: 100%; height: 100%;display: none; "  id="respuesta_fader1"   class="respuesta_item respuesta_fader"  src="{{ asset_url }}" alt="timer" />
+       {% endimage %}   
+       
+       
+        {% image '@CelmediaSiteBundle/Resources/public/images/pantallas/3prendida.png' %}
+        <img style="width: 100%; height: 100%; display: none;"  id="respuesta_fader2"  class="respuesta_item respuesta_fader"  src="{{ asset_url }}" alt="timer" />
+       {% endimage %}   
+       
+       
+        {% image '@CelmediaSiteBundle/Resources/public/images/pantallas/4prendida.png' %}
+        <img style="width: 100%; height: 100%; display: none;"  id="respuesta_fader3"  class="respuesta_item respuesta_fader"  src="{{ asset_url }}" alt="timer" />
+       {% endimage %}   
+       
+       
+       
+       
+       
+    </div>
+    
+
+    
+    <div id="wrapper">
+	<div id="cell">
+		<div class="content">
+			<div id="iniciar" class="row">
+                 
+
+                            <div class="col-md-7 col-md-offset-3 btn-lg btn-empezar text-center" style="background-color: red;margin-top: 100px;" onclick="handlerMobile('empezar');  empezar(); ">
+                     START
+                 </div>
+         </div>
+
+    {% render(controller('CelmediaSiteBundle:Mobile:index')) %}
+		</div>
+	</div>
+</div>
+   
+    
+    <div id="container"  >
+        <ul id="scene" class="scene" style="padding-left: 0px;" >
+                        
+            
+            
+            
+                   
+                   {# <li class="layer" data-depth="0.10">
+                        {% image '@CelmediaSiteBundle/Resources/public/images/modal_opciones.jpg' %}
+                        <img style="width: 100%; height: 100%; "  id="timer-img" class="img-responsive" src="{{ asset_url }}" alt="timer" />
+                        {% endimage %}                            
+                    </li>#}
+                   
+                 
+                                    
+                    <li class="layer" data-depth="0.50">
+                    
+                        
+ 
+         
+      
+               
+                    
+                    </li>
+                   
+                 
+            </ul>
+    </div>
+    
+    
+    
+    
+
+
+
+{%  endblock  %}
+
+
+
+
+
+{% block js %}
+    {% javascripts 
+        '@CelmediaSiteBundle/Resources/public/js/jquery-1.11.0.min.js'       
+        '@CelmediaSiteBundle/Resources/public/js/bootstrap.js'
+        '@CelmediaSiteBundle/Resources/public/js/parallax.js'
+        '@CelmediaSiteBundle/Resources/public/js/jquery.confirm.js'
+        '@CelmediaSiteBundle/Resources/public/js/script.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+
+
+    <script type="text/javascript">
+
+var beep2 = document.getElementById("beep2"); 
+var pregunta ;
+var respuesta ; 
+var elemento ; 
+var selected_pregunta ; 
+
+
+
+function getSelectedPregunta(){
+    return selected_pregunta; 
+}
+
+
+function setCurrentValue(  id_pregunta , id_respuesta , cur_element ){
+    pregunta = id_pregunta;
+    respuesta = id_respuesta; 
+    elemento = $(cur_element).find('input');
+    selected_pregunta = $(cur_element).find('label').text();
+}
+ 
+
+        $(document).ready( function(){
+
+        beep2 = document.getElementById("beep2"); 
+        $(".respuesta").confirm({
+            text: $(elemento).find('label').text() +   " Are you sure ?",
+            title: "Confirmation required",
+            confirm: function(button) {
+                beep2.play();
+                contestar(pregunta , respuesta , elemento); 
+               
+            },
+            cancel: function(button) {
+                // do something
+            },
+            confirmButton: "Yes",
+            cancelButton: "No",
+            post: true
+        });
+        
+        $(".respuesta").on('touchstart', function(e) {  
+            $(this).addClass("touched");
+{#            document.getElementById("beep").play();#}
+          });
+        
+        $(".respuesta").on('click', function(e) {  
+            $(this).addClass("touched");
+{#            document.getElementById("beep").play();#}
+          });
+          
+        $(".respuesta").on('touchleave', function(e) {                          
+            $(this).removeClass("touched");
+            
+          });
+          
+          
+          /// touch end 
+        $(".respuesta").on('touchend', function(e) {                          
+            $(this).removeClass("touched");
+                
+          });
+          
+          
+        $(".respuesta").on('touchcancel', function(e) {                          
+            $(this).removeClass("touched");
+          });
+          
+        
+        
+                   var baloon = $('.respuesta_fader');
+            function runIt() {
+                baloon.animate({opacity:'+=1'}, 1000);
+                baloon.animate({opacity:'-=0.5'}, 1000, runIt);
+            }
+                   runIt();
+
+
+       
+    
+    } );
+
+// Pretty simple huh?
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+
+
+        var puntaje_total = 0 ; 
+
+        function process_response(response) {
+            
+            puntaje_total = response.puntaje ; 
+            $("#puntaje_final").text( (puntaje_total * (100 /20 ) ) + "%" );
+            
+        }
+
+
+        function listener() {
+            $.getJSON('{{  path("get_estado") }}' , function( response){
+                process_response(response);
+            });
+        }
+
+
+
+        function handlerMobile( accion  ){
+            $.getJSON(    Routing.generate('set_estado', { modo: 'mobile' , accion: accion })  , function( response){
+                        process_response(response);
+             });
+        }
+
+
+
+        var indice = 0 ; 
+
+        function contestar(pregunta, respuesta, elemento) {
+
+            var id_pregunta = pregunta;
+            var id_respuesta = respuesta;
+            
+            
+
+
+              
+
+            $.post("{{ path('encuesta_mobile') }}",
+                    {
+                        encuesta: id_pregunta,
+                        opcion: id_respuesta
+                    },
+            function(response) {
+
+
+                indice++ ; 
+                
+                $("#respuesta_fader" + indice ).show();
+
+                if (response.code && response.success) {
+                    //do something
+
+
+                    $(elemento).parent().parent().parent().addClass('contestada');
+
+                    $('.contestada').stop(true, true).hide();
+
+
+
+
+                    if ($(elemento).parent().parent().parent().hasClass("ultima")) {
+                        $("#cuestionario").hide();
+                        $("#mensaje").stop(true, true).show("fast", function() {
+                            clearTimer();
+                            var min = $("#minutes").text();
+                            var seg = $("#seconds").text();
+                            $("#total-minutos").text(min);
+                            $("#total-segundos").text(seg);
+                            $("#seccion-trivia").css('background-color', 'rgba(255,255,255, 0.5)');
+                            $("#seccion-trivia").css('background-image', 'none');
+                        });
+
+                    } else {
+                        // 
+
+                        continuar();
+                        totalSeconds = 121;
+
+                        
+                    }
+
+
+                } else {
+
+
+
+                }
+
+
+
+            }, "json");
+          
+        }
+
+
+
+
+    </script>
+
+
+{% endblock %}
+
+
+
+
+
+
